@@ -1,0 +1,16 @@
+<div class = "d-flex align-items-center justify-content-center ">
+<h1>Edit Candidate-Job Page for Admins</h1>
+</div>   
+
+<% if @candijobs.present? %>
+<h3>Candidates applied for Jobs and their Status</h3><br/>
+
+    <% @candijobs.each_with_index do |job, index| %>
+        <%= index+1 %>: <b>Candidate Name</b> - <%= job.candidatename %>, <b>Profile</b> - <%= job.jobname %>, <b>Status</b> - <%= job.status %><br/>
+        <% if session[:phone] %>
+            <%= link_to "Edit Status", candijob_status_path(:cjid => job.id), class: "btn btn-primary" %><br/>
+        <% end %>    
+    <% end %>
+<% else %>
+    No jobs available    
+<% end %>

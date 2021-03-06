@@ -1,0 +1,20 @@
+<h1>Edit this Job</h1>
+
+<%= form_with model: @job, url: admin_edit_jobs_path(:job_id => @job.id) do |form| %>
+
+    <%= form.label :title, "Title", class:"form-label" %>
+    <%= form.text_field :title, :value => @job.title ,class:"form-control" %>
+
+    <%= form.label :category, "Category", class:"form-label" %>
+    <%= form.text_field :category, :value => @job.category, class:"form-control" %>
+
+    <%= form.label :yoe, "Years of Experience", class:"form-label" %>
+    <%= form.text_field :yoe, :value => @job.yoe, class:"form-control" %>
+
+    <%= form.label :status, "Status", class:"form-label" %>
+    <%= form.check_box :status, :value => @job.status %>
+
+    <div class="mb-3">
+        <%= form.submit "Submit", class: "btn btn-primary" %>
+    </div>
+<% end %>

@@ -1,0 +1,17 @@
+<h1>Edit this Candidate-Job Status</h1>
+
+<%= form_with model: @candijob, url: candijob_status_path(:cjid => @candijob.id) do |form| %>
+
+    <%= form.label :candidatename, "Candidate Name", class:"form-label" %>
+    <%= form.text_field :candidatename, :value => @candijob.candidatename ,class:"form-control" %>
+
+    <%= form.label :jobname, "Profile", class:"form-label" %>
+    <%= form.text_field :jobname, :value => @candijob.jobname, class:"form-control" %>
+
+    <%= form.label :status, "Status", class:"form-label" %>
+    <%= form.check_box :status, :value => @candijob.status %>
+
+    <div class="mb-3">
+        <%= form.submit "Submit", class: "btn btn-primary" %>
+    </div>
+<% end %>

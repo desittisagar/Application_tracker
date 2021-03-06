@@ -1,0 +1,8 @@
+<h1>Submit Received OTP</h1>
+<%= form_with url: admin_set_path do |form| %>
+    <%= form.label :otp1, "Enter OTP", class:"form-label" %>
+    <%= form.number_field :otp1, class:"form-control" %>
+    <div class="mb-3">
+        <%= form.submit "Submit OTP", class: "btn btn-primary" %>
+    </div>
+<% end %>

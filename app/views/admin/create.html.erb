@@ -1,0 +1,19 @@
+<h1>Post new jobs</h1>
+
+<%= form_with url: admin_create_jobs_path do |form| %>
+    <%= form.label :title, "Job title", class:"form-label" %>
+    <%= form.text_field :title, class:"form-control" %>
+
+    <%= form.label :category, "Job category (Backend/Frontend)", class:"form-label" %>
+    <%= form.text_field :category, class:"form-control" %>
+
+    <%= form.label :yoe, "Years of Experience needed", class:"form-label" %>
+    <%= form.text_field :yoe, class:"form-control" %>
+
+    <%= form.label :status, "Job Status(active/inactive)", class:"form-label" %>
+    <%= form.check_box :status %>
+
+    <div class="mb-3">
+        <%= form.submit "Create this job", class: "btn btn-primary" %>
+    </div>
+<% end %>

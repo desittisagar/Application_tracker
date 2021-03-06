@@ -1,0 +1,9 @@
+<h1>Admin Login</h1>
+
+<%= form_with url: admin_login_path do |form| %>
+    <%= form.label :phone, "Enter Phone", class:"form-label" %>
+    <%= form.text_field :phone, class:"form-control" %>
+    <div class="mb-3">
+        <%= form.submit "Get OTP", class: "btn btn-primary" %>
+    </div>
+<% end %>

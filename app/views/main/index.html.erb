@@ -1,3 +1,36 @@
 <div class = "d-flex align-items-center justify-content-center ">
-<h1>Application Tracker Root</h1>
+<h1>Home Page</h1>
+</div>   
+
+<% if @jobs.present? %>
+<h3>Available Posts..</h3><br/>
+
+    <% @jobs.each_with_index do |job, index| %>
+        <%= index+1 %>: <b>Title</b> - <%= job.title %>, Category - <%= job.category %>, Years of exp needed - <%= job.yoe %><br/>
+        <% if Current.user %>
+            <%= button_to "Apply", apply_jobs_path(:job_id => job.id), class: "btn btn-primary" %>
+        <% end %>    
+    <% end %>
+<% else %>
+    No jobs available    
+<% end %> 
+<br/><br/>
+<% if @my_jobs.present? %>
+    <h3>List of Jobs that you applied for.</h3><br/>
+    <% @combined.each do |job, status| %>
+        <li>
+            <b>Title</b> - <%= job.title %>, Category - <%= job.category %>, Years of exp needed - <%= job.yoe %>, Status - <%= status %><br/>
+        </li> 
+    <% end %>
+<% else %>    
+<% end %>
+
+<br/>
+<div class= "container">
+    <% if session[:phone] %>
+        <%= link_to "Create Jobs", admin_create_jobs_path, :method => "get", class: "btn btn-primary" %>
+        <%= link_to "Edit Jobs", admin_job_list_path, :method => "get", class: "btn btn-primary" %>
+        <%= link_to "Candidate Job Status", candijob_statuslist_path, :method => "get", class: "btn btn-primary" %>
+    <% end %>
 </div>
+

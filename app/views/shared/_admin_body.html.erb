@@ -1,0 +1,11 @@
+<%
+=begin%>
+ <br/>
+<br/>
+<div class= "container">
+    <% if session[:phone] %>
+        <%= link_to "Create Jobs", admin_create_jobs_path, :method => "get", class: "btn btn-primary" %>
+    <% end %>
+</div> 
+<%
+=end%>

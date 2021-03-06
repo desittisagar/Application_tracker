@@ -1,0 +1,35 @@
+<h1>Update your Profile</h1>
+
+<%= form_with model: @user, url: profile_path do |form| %>
+    <% if form.object.errors.any? %>
+        <% form.object.errors.full_messages.each do |message| %>
+            <div>
+                <%= message %>
+            </div>
+        <% end %>
+    <% end %>
+    <%= form.label :email, "Email", class:"form-label" %>
+    <%= form.text_field :email, :value => @user.email ,class:"form-control" %>
+
+    <%= form.label :name, "Name", class:"form-label" %>
+    <%= form.text_field :name, :value => @user.name, class:"form-control" %>
+
+    <%= form.label :age, "Age", class:"form-label" %>
+    <%= form.text_field :age, :value => @user.age, class:"form-control" %>
+
+    <%= form.label :yoe, "Years of experience", class:"form-label" %>
+    <%= form.text_field :yoe, :value => @user.yoe, class:"form-control" %>
+
+    <%= form.label :skills, "Skills", class:"form-label" %>
+    <%= form.text_field :skills, :value => @user.skills, class:"form-control" %>
+
+    <%= form.label :resume, "Resume", class:"form-label" %>
+    <%= form.text_field :resume, class:"form-control" %>
+
+    <%= form.label :phone, "Phone", class:"form-label" %>
+    <%= form.text_field :phone, :value => @user.phone, class:"form-control" %>
+
+    <div class="mb-3">
+        <%= form.submit "Submit", class: "btn btn-primary" %>
+    </div>
+<% end %>

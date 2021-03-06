@@ -1,0 +1,21 @@
+<h1>Hi, Signup Page</h1>
+<%= @user%>
+
+<%= form_with model: @user, url: sign_up_path do |form| %>
+    <% if form.object.errors.any? %>
+        <% form.object.errors.full_messages.each do |message| %>
+            <div>
+                <%= message %>
+            </div>
+        <% end %>
+    <% end %>
+    <%= form.label :email, "Enter Email", class:"form-label" %>
+    <%= form.text_field :email, class:"form-control" %>
+    <%= form.label :password, "Enter Password", class:"form-label" %>
+    <%= form.password_field :password, class:"form-control" %>
+    <%= form.label :password_confirmation, "Enter Password Again", class:"form-label" %>
+    <%= form.password_field :password_confirmation, class:"form-control" %>
+    <div class="mb-3">
+        <%= form.submit class: "btn btn-primary" %>
+    </div>
+<% end %>
