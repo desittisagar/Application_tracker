@@ -60,5 +60,5 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 group :production do 
-  gem 'pg'         #gem to use in production environment
+  gem 'pg', '1.2.3'         #gem to use in production environment
 end
