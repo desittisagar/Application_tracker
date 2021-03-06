@@ -1,6 +1,12 @@
 class ChangeIntegerLimit < ActiveRecord::Migration[6.1]
-  def change
-    change_column :admins, :phone, :integer, limit: 8
-    change_column :users, :phone, :integer, limit: 8
+  def up
+    change_column :admins, :phone, :bigint
+    change_column :users, :phone, :bigint
   end
+
+  def down
+    change_column :admins, :phone, :integer
+    change_column :users, :phone, :integer
+  end
+
 end

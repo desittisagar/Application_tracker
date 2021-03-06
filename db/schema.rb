@@ -14,7 +14,7 @@ ActiveRecord::Schema.define(version: 2021_03_06_144401) do
 
   create_table "admins", force: :cascade do |t|
     t.string "name"
-    t.integer "phone", limit: 8
+    t.bigint "phone"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -48,7 +48,7 @@ ActiveRecord::Schema.define(version: 2021_03_06_144401) do
     t.integer "yoe"
     t.string "skills"
     t.string "resume"
-    t.integer "phone", limit: 8
+    t.bigint "phone"
   end
 
 end
