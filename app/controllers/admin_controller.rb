@@ -17,18 +17,18 @@ class AdminController < ApplicationController
         require("bundler")
 		Bundler.require()
 
-		account_sid = 'AC1c125409ac0a8b482c131de9fee8f9e8'
-		auth_token = 'c40e3b18546f776bd43a21cb31b91f52'
+		#account_sid = 'AC1c125409ac0a8b482c131de9fee8f9e8'
+		#auth_token = 'c40e3b18546f776bd43a21cb31b91f52'
 
-		@client = Twilio::REST::Client.new(account_sid, auth_token)
+		#@client = Twilio::REST::Client.new(account_sid, auth_token)
         session[:phone] = params[:phone]
 		#@otp = 2345
         @otp = rand(1111..9999)
         session[:otp] = @otp
-        Rails.logger.debug(session[:otp])
-        @country_code = "+91"
+        Rails.logger.debug("OPPTTTPPPP ",session[:otp])
+        #@country_code = "+91"
 
-		@client.messages.create(to: @country_code+"9804293059", from: "+18787898759", body: "this is your otp :" + @otp.to_s)
+		#@client.messages.create(to: @country_code+"9804293059", from: "+18787898759", body: "this is your otp :" + @otp.to_s)
         #render plain: params[:phone]
     end
 
