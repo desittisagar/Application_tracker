@@ -10,11 +10,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_03_04_173956) do
+ActiveRecord::Schema.define(version: 2021_03_06_144401) do
 
   create_table "admins", force: :cascade do |t|
     t.string "name"
-    t.integer "phone"
+    t.integer "phone", limit: 8
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -48,7 +48,7 @@ ActiveRecord::Schema.define(version: 2021_03_04_173956) do
     t.integer "yoe"
     t.string "skills"
     t.string "resume"
-    t.integer "phone"
+    t.integer "phone", limit: 8
   end
 
 end
