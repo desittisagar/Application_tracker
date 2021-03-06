@@ -11,7 +11,7 @@ class CreateUsers < ActiveRecord::Migration[6.1]
       #t.integer :phone
 
       t.timestamps
-      add_foreign_key :User, :Job
+      #add_foreign_key :User, :Job
     end
   end
 end
