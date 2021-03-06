@@ -25,7 +25,8 @@ class AdminController < ApplicationController
 		#@otp = 2345
         @otp = rand(1111..9999)
         session[:otp] = @otp
-        Rails.logger.debug("OPPTTTPPPP ",session[:otp])
+        puts "OPPTTTPPPP ",session[:otp]
+        #Rails.logger.debug("OPPTTTPPPP ",session[:otp])
         #@country_code = "+91"
 
 		#@client.messages.create(to: @country_code+"9804293059", from: "+18787898759", body: "this is your otp :" + @otp.to_s)
