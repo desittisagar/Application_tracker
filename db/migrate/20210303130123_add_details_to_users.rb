@@ -5,6 +5,6 @@ class AddDetailsToUsers < ActiveRecord::Migration[6.1]
     add_column :users, :yoe, :integer
     add_column :users, :skills, :string
     add_column :users, :resume, :string
-    add_column :users, :phone, :interger
+    add_column :users, :phone, :integer
   end
 end
